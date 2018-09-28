@@ -18,17 +18,17 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
         final ArrayList<Song> songs = new ArrayList<>();
 
-        songs.add(new Song("Just the way you Are", "Bruno Mars", R.drawable.bruno_mars));
-        songs.add(new Song("Hello", "Adele", R.drawable.adele));
-        songs.add(new Song("Let Her Go", "Passenger", R.drawable.passenger));
-        songs.add(new Song("Let Me Love You", "DJ Snake"));
-        songs.add(new Song("Russian Roulette", "Rihanna", R.drawable.rihanna));
-        songs.add(new Song("When I'm Gone", "Eminem", R.drawable.eminem));
-        songs.add(new Song("Closer", "The Chainsmokers"));
-        songs.add(new Song("Love the way you lie", "Eminem ft. Rihanna"));
-        songs.add(new Song("Shape of You", "Ed Sheeran"));
-        songs.add(new Song("Gold Digger", "Kayne west", R.drawable.kayne_west));
-        songs.add(new Song("Rolling in the Deep", "Adele", R.drawable.adele));
+        songs.add(new Song("Just the way you Are", "Bruno Mars", R.drawable.bruno_mars, R.raw.airplane_landing_daniel_simion));
+        songs.add(new Song("Hello", "Adele", R.drawable.adele, R.raw.airplane_landing_daniel_simion));
+        songs.add(new Song("Let Her Go", "Passenger", R.drawable.passenger, R.raw.airplane_landing_daniel_simion));
+        songs.add(new Song("Let Me Love You", "DJ Snake", R.raw.airplane_landing_daniel_simion));
+        songs.add(new Song("Russian Roulette", "Rihanna", R.drawable.rihanna, R.raw.airplane_landing_daniel_simion));
+        songs.add(new Song("When I'm Gone", "Eminem", R.drawable.eminem, R.raw.airplane_landing_daniel_simion));
+        songs.add(new Song("Closer", "The Chainsmokers", R.raw.airplane_landing_daniel_simion));
+        songs.add(new Song("Love the way you lie", "Eminem ft. Rihanna", R.raw.airplane_landing_daniel_simion));
+        songs.add(new Song("Shape of You", "Ed Sheeran", R.raw.airplane_landing_daniel_simion));
+        songs.add(new Song("Gold Digger", "Kayne west", R.drawable.kayne_west, R.raw.airplane_landing_daniel_simion));
+        songs.add(new Song("Rolling in the Deep", "Adele", R.drawable.adele, R.raw.airplane_landing_daniel_simion));
 
         mRecyclerView = findViewById(R.id.songs_recycler_view);
 
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     public void onItemClick(Song song) {
         Intent intent = new Intent(MainActivity.this, PlayingSongActivity.class);
         intent.putExtra("songTitle", song.getmSongTitle());
+        intent.putExtra("track", song.getmTrack());
         if (song.hasImage()){
             intent.putExtra("imageResourceId", song.getmImageResourceId());
         }else {

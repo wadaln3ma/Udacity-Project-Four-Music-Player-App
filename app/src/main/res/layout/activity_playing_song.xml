@@ -34,16 +34,14 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:layout_below="@id/title_view"
-        android:layout_above="@id/progressBar"
-        android:layout_marginBottom="@dimen/standard_margin"/>
+        android:layout_above="@id/scrubSeekBar"
+        android:layout_marginBottom="@dimen/standard_margin" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
+    <SeekBar
+        android:id="@+id/scrubSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:visibility="visible"
         android:layout_above="@id/media_actions_buttons" />
 
     <LinearLayout
@@ -57,19 +55,19 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
             android:layout_weight="1"
-            android:background="@android:drawable/ic_media_previous" />
+            android:background="@drawable/ic_skip_previous" />
 
         <Button
+            android:id="@+id/play_pause_button"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:layout_weight="1"
-            android:background="@android:drawable/ic_media_pause" />
+            android:layout_weight="1" />
 
         <Button
             style="?android:attr/buttonBarButtonStyle"
@@ -78,8 +76,19 @@
             android:layout_marginEnd="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
-            android:background="@android:drawable/ic_media_next" />
+            android:background="@drawable/ic_skip_next" />
 
     </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/volumeSeekBar"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:rotation="270"
+        android:layout_marginRight="-100dp"
+         android:layout_above="@id/scrubSeekBar"/>
 
 </RelativeLayout>
